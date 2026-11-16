@@ -1,0 +1,14 @@
+====================================================================
+[STAGE 7: BERSERK LOCKDOWN - BLUE TEAM VERIFICATION LOG]
+[第7段階：暴走封鎖 - ブルーチーム検証ログ]
+Timestamp / 検証日時: 2026-11-16 01:55:17
+Target / 検証対象: http://192.168.1.168:30801 (Woven City Zero-Trust Hardened)
+====================================================================
+⚠️ ERROR (🧱 [1] Sandbox Token Leak / トークン漏洩遮断) -> HTTPConnectionPool(host='192.168.1.168', port=30801): Max retries exceeded with url: /api/v1/sandbox/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb87fb09940>: Failed to establish a new connection: [Errno 111] Connection refused'))
+⚠️ ERROR (🪪 [2] Weak OAuth/JWT Minting / 脆弱JWT発行拒否) -> HTTPConnectionPool(host='192.168.1.168', port=30801): Max retries exceeded with url: /api/v1/auth/weaver-token (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb87fb496d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+⚠️ ERROR (🏠 [3] Smart-Home IDOR Access / スマートホームIDOR防御) -> HTTPConnectionPool(host='192.168.1.168', port=30801): Max retries exceeded with url: /api/v1/home/assist/resident-02 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb87fb49f90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+⚠️ ERROR (📡 [4] V2X Edge Spoof Injection / V2Xエッジ偽装遮断) -> HTTPConnectionPool(host='192.168.1.168', port=30801): Max retries exceeded with url: /api/v1/v2x/edge/telemetry (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb87faf9350>: Failed to establish a new connection: [Errno 111] Connection refused'))
+⚠️ ERROR (🤖 [5] Kage-Bot Twin Hijack / 影ボット軌道乗っ取り防御) -> HTTPConnectionPool(host='192.168.1.168', port=30801): Max retries exceeded with url: /api/v1/logistics/kagebot/unit-04 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb87faf8c30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+⚠️ ERROR (⚡ [6] Fuji-H2 IT/OT Crossover / 水素グリッドIT/OT境界遮断) -> HTTPConnectionPool(host='192.168.1.168', port=30801): Max retries exceeded with url: /api/v1/grid/fuji-h2/status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb87fb395b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+⚠️ [FINAL VERDICT]: Review unsealed vectors above.
